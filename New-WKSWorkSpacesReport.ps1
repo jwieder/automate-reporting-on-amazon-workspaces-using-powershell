@@ -204,7 +204,6 @@ foreach ($WorkSpace in $WorkSpaces){
         "IpAddress" = $WorkSpace.IpAddress
         "Directory" = (get-dsdirectory -Region $Region -DirectoryID $WorkSpace.DirectoryId).alias
         "DirectoryId" = $WorkSpace.DirectoryId
-        "Bundle" = (Get-WKSWorkspaceBundle -Region $Region -BundleId $WorkSpace.BundleId).Name
         "BundleId" = $WorkSpace.BundleId
         "SubnetLabel" =  $WorkSpaceSubnetInfo.Tag.Where({$_.Key -eq "Name"}).value
         "SubnetId" = $WorkSpace.SubnetId
@@ -237,7 +236,6 @@ foreach ($WorkSpace in $WorkSpaces){
     ipaddress, `
     Directory, `
     directoryid, `
-    Bundle, `
     bundleid, `
     SubnetLabel, `
     SubnetId, `
